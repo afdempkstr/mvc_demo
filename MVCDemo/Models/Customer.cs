@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -17,5 +18,7 @@ namespace MVCDemo.Models
         public DateTime Birthday { get; set; }
 
         public int NumberOfChildren { get; set; }
+
+        public virtual ICollection<Invoice> Invoices { get; set; }
     }
 }

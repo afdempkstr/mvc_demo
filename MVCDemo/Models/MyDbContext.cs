@@ -13,5 +13,7 @@ namespace MVCDemo.Models
         { }
 
         public virtual DbSet<Customer> Customers { get; set; }
+
+        public virtual DbSet<Invoice> Invoices { get; set; }
     }
 }

@@ -1,0 +1,13 @@
+﻿@model MVCDemo.Models.Invoice
+
+@{
+    ViewBag.Title = "Invoice";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Invoice</h2>
+<p>Invoice Id: @Model.Id</p>
+<p>Invoice Amount: @Model.Amount</p>
+<p>Invoice Date: @Model.InvoiceDate</p>
+<p>Invoice Customer ID: @Model.Customer.Id</p>
+

@@ -68,17 +68,39 @@ namespace MVCDemo.Controllers
                 dbContext.Customers.Add(customer);
                 dbContext.SaveChanges();
             }
-
-
-
-
-
-                var customerList = new List<Customer>(new[] { customer, customer, customer });
+            
+            var customerList = new List<Customer>(new[] { customer, customer, customer });
             
             ViewBag.Message = "Model page";
             ViewBag.Name = "My name";
             ViewBag.Customer = customer;
             return View(customerList);
+        }
+
+        public ActionResult Invoice()
+        {
+            var customer = new Customer()
+            {
+                Name = "Customer with Invoices",
+                Balance = 0m,
+                NumberOfChildren = 0,
+                Birthday = DateTime.Today
+            };
+
+            var invoice = new Invoice()
+            {
+                Amount = 5.0m,
+                InvoiceDate = DateTime.Now,
+                Customer = customer
+            };
+
+            using (var dbcontext = new MyDbContext())
+            {
+                dbcontext.Invoices.Add(invoice);
+                dbcontext.SaveChanges();
+            }
+
+            return View(invoice);
         }
     }
 }
