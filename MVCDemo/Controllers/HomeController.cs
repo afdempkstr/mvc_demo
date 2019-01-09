@@ -14,11 +14,18 @@ namespace MVCDemo.Controllers
             return View();
         }
 
+        // GET /Home/About/1?name=test
+        // GET /Home/About?id=1&name=test
         public ActionResult About(string name, int? ID)
         {
-            //ID.HasValue
-            if (ID == null)
-            { }
+            // int? t <=> Nullable<int> t
+
+            if (ID.HasValue)
+            {
+            }
+            if (ID != null)
+            {
+            }
 
             if (ID.HasValue)
             {
