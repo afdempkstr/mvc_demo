@@ -15,9 +15,20 @@ namespace MVCDemo.Controllers
         private MyDbContext db = new MyDbContext();
 
         // GET: Customers
-        public ActionResult Index()
+        public ActionResult Index(string term)
         {
-            return View(db.Customers.ToList());
+            IEnumerable<Customer> customers = null;
+
+            if (!string.IsNullOrWhiteSpace(term))
+            {
+                customers = db.Customers.Where(c => c.Name.Contains(term)).ToList();
+            }
+            else
+            {
+                customers = db.Customers.ToList();
+            }
+
+            return View(customers);
         }
 
         // GET: Customers/Details/5
@@ -78,7 +89,7 @@ namespace MVCDemo.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Balance,Birthday,NumberOfChildren")] Customer customer)
+        public ActionResult Edit([Bind(Include = "Id,Name,Birthday,NumberOfChildren")] Customer customer)
         {
             if (ModelState.IsValid)
             {
