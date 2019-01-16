@@ -143,6 +143,10 @@
     <Compile Include="Migrations\201901081646568_Initial.Designer.cs">
       <DependentUpon>201901081646568_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901161941469_modelattributes.cs" />
+    <Compile Include="Migrations\201901161941469_modelattributes.Designer.cs">
+      <DependentUpon>201901161941469_modelattributes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Invoice.cs" />
@@ -229,6 +233,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201901081646568_Initial.resx">
       <DependentUpon>201901081646568_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901161941469_modelattributes.resx">
+      <DependentUpon>201901161941469_modelattributes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

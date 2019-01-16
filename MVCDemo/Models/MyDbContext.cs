@@ -10,7 +10,8 @@ namespace MVCDemo.Models
     public class MyDbContext : DbContext
     {
         public MyDbContext() : base("name=dbcon")
-        { }
+        {
+        }
 
         public virtual DbSet<Customer> Customers { get; set; }
 
